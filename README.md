@@ -7,6 +7,7 @@ Por: Professor Fellipe Souto.
     1. Gustavo Verissimo    RM 551244
     2. Gabriel Pacheco      RM 550191
     3. Murilo Henrique      RM 99855
+    4. Leonardo Correia     RM 550413
 
 ## Árvore de Projetos
 
