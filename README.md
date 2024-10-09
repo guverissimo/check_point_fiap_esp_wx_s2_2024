@@ -4,7 +4,8 @@ Projeto Checkpoint para a disciplina de "Domain Driven Design com Java", para os
 Por: Professor Fellipe Souto.
 
 ## Integrantes
-    1. Gustavo Verissimo RM551244
+    1. Gustavo Verissimo    RM 551244
+    2. Gabriel Pacheco      RM 550191
 
 ## Árvore de Projetos
 
