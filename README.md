@@ -3,6 +3,9 @@ Projeto Checkpoint para a disciplina de "Domain Driven Design com Java", para os
 
 Por: Professor Fellipe Souto.
 
+## Integrantes
+    1. Gustavo Verissimo RM551244
+
 ## Árvore de Projetos
 
 1. [CHk_1 :: Problema: Compressão de dados gênicos](checkpoint_1/PROBLEM.md)
