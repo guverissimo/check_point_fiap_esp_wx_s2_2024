@@ -96,7 +96,7 @@ $ $ java -jar <path/to/jar/file> <path/to/input> <path/to/output>
 | TOTAL INPUT CHARACTERS: 1.048.576                         |
 |                                                           |
 | FREQUENCIES:                                              |
-| A: 262_144.0  (25.00%                                     |
+| A: 262_144.0  (25.00%)                                    |
 | C: 524_288.0  (50.00%)                                    |
 | T: 131_072.0  (12.50%)                                    |
 | G: 131_072.0  (12.50%)                                    |

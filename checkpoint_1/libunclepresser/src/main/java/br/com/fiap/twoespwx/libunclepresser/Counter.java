@@ -1,56 +1,76 @@
 package br.com.fiap.twoespwx.libunclepresser;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Counter {
 
-	  public String count(String entrada) {
-	        System.out.println("\n\n------------------------------------");
-	        System.out.println(":: Lib Uncle Otidio - Nucleotidio Counter Algorithm ::");
+    // Processa uma lista de strings e retorna um relatório consolidado
+    public String countAll(List<String> inputs) {
+        StringBuilder result = new StringBuilder();
 
-	        int frequenciaA = 0;
-	        int frequenciaC = 0;
-	        int frequenciaT = 0;
-	        int frequenciaG = 0;
+        result.append("\n\n-----------------------------------------------------------\n");
+        result.append(":: Lib Uncle Presser - Nucleotidio Presser Algorithm ::\n");
+        result.append("-----------------------------------------------------------\n");
 
-	        String[] entradaSplitada = entrada.split("");
-	        
-	        for(int i = 0; i <= entradaSplitada.length - 1; i++) {
-	            //System.out.println("[i] = [" + i + "]");
-	            String caracter = entradaSplitada[i];
-	            //System.out.println("caracter: " + caracter);
+        // Mapa para armazenar as frequências consolidadas
+        Map<Character, Integer> totalFrequencies = new HashMap<>();
+        int totalLength = 0;
 
-	            if (caracter.equals("A")) {
-	                frequenciaA = frequenciaA + 1; 
-	            }            
+        // Processa cada sequência e acumula frequências e tamanho
+        for (String input : inputs) {
+            if (!input.isEmpty()) {
+                totalLength += input.length();  // Soma o tamanho total
+                accumulateFrequencies(totalFrequencies, input);  // Acumula frequências
+            }
+        }
 
-	            if (caracter.equals("C")) {
-	                frequenciaC = frequenciaC + 1; 
-	            }            
+        // Exibe as frequências consolidadas
+        result.append("Frequências Totais:\n");
+        for (Map.Entry<Character, Integer> entry : totalFrequencies.entrySet()) {
+            result.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
 
-	            if (caracter.equals("T")) {
-	                frequenciaT = frequenciaT + 1; 
-	            }            
-	            
-	            if (caracter.equals("G")) {
-	                frequenciaG = frequenciaG + 1; 
-	            }
-	        }
+        result.append("Tamanho Total das Sequências :: ").append(totalLength).append("\n");
+        result.append("-----------------------------------------------------------\n");
 
-	        System.out.println("Sequência :: " + entrada);
-	        System.out.println("Tamanho da Sequência :: " + entrada.length());
-	        System.out.println("Total de A :: " + frequenciaA);
-	        System.out.println("Total de C :: " + frequenciaC);
-	        System.out.println("Total de T :: " + frequenciaT);
-	        System.out.println("Total de G :: " + frequenciaG);
-	        System.out.println("------------------------------------\n\n");
+        return result.toString();
+    }
 
-	        String output = "";
-	        output = output.concat("Sequence " + entrada + "\n");
-	        output = output.concat("Sequence Size " + entrada.length() + "\n");
-	        output = output.concat("A: " + frequenciaA + "\n");
-	        output = output.concat("C: " + frequenciaC + "\n");
-	        output = output.concat("T: " + frequenciaT + "\n");
-	        output = output.concat("G: " + frequenciaG + "\n");
+    // Gera a compressão RLE para uma sequência
+    private String count(String input) {
+        StringBuilder rleOutput = new StringBuilder();
+        char currentChar = input.charAt(0);
+        int count = 1;
 
-	        return output;
-	    }
+        for (int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == currentChar) {
+                count++;
+            } else {
+                appendRLE(rleOutput, currentChar, count);
+                currentChar = input.charAt(i);
+                count = 1;
+            }
+        }
+        appendRLE(rleOutput, currentChar, count);  // Adiciona o último caractere
+
+        return rleOutput.toString();
+    }
+
+    // Acumula as frequências de caracteres de uma sequência no mapa fornecido
+    private void accumulateFrequencies(Map<Character, Integer> frequencies, String input) {
+        for (char c : input.toCharArray()) {
+            frequencies.put(c, frequencies.getOrDefault(c, 0) + 1);
+        }
+    }
+
+    // Adiciona um caractere e sua contagem ao RLE, mas só se a contagem for maior que 1
+    private void appendRLE(StringBuilder rleOutput, char c, int count) {
+        if (count > 1) {
+            rleOutput.append(c).append(count);
+        } else {
+            rleOutput.append(c);
+        }
+    }
 }

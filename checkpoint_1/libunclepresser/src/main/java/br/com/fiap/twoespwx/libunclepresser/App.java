@@ -1,7 +1,4 @@
 /* 
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  *
  * Grupo: G2ML
  * Autores: 
@@ -13,11 +10,30 @@
 
 package br.com.fiap.twoespwx.libunclepresser;
 
+import java.util.List;
+
+import br.com.fiap.twoespwx.libunclepresser.input.Reader;
+import br.com.fiap.twoespwx.libunclepresser.output.OutputWriter;
 
 public class App 
 {
     public static void main( String[] args )
     {
         System.out.println("LIB UNCLE PRESSER - GRUPO G2ML");
+        
+        String inputFilename = "inputs/input1.txt";
+        String outputFilename = "outputs/OUTPUT1.txt";
+        
+        Reader reader = new Reader();
+        OutputWriter outw = new OutputWriter();
+        
+        List<String> lines = reader.readWithFileInputStream(inputFilename);
+        System.out.println(lines);
+        Counter counter = new Counter();
+        
+//        String line = reader.readFromKeyboard();
+        String output = counter.countAll(lines);
+        
+        outw.writeWithPrintStream(outputFilename, output);
     }
 }
