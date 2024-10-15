@@ -106,7 +106,7 @@ $ $ java -jar <path/to/jar/file> <path/to/input> <path/to/output>
 | ALGORITHM: Run-Length Encoding (RLE)                      |
 | TEXT-CODIFICATION: UTF-8                                  |
 | COMPRESSION RATE: =~ 70%                                  |
-|                                                           |
+|                                                           |   
 | OUTPUT FILE SIZE: 314,572.8 BYTES                         |
 |                                                           |
  -----------------------------------------------------------

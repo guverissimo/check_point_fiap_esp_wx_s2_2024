@@ -71,5 +71,22 @@ public class Reader {
 	        scanner.close();
 	        return line;
 	    }
+	    
+	    public long getFileSize(String filepath) {
+	    	 long size = 0;
+	         File file = new File(filepath); 
 
+	         if (!file.exists()) {
+	             System.err.println("O arquivo não existe: " + filepath);
+	             return size; 
+	         }
+
+	         try (FileInputStream fis = new FileInputStream(file)) {
+	             size = file.length(); 
+	         } catch (IOException e) {
+	             System.err.println("Erro ao obter o tamanho do arquivo: " + e.getMessage());
+	         }
+
+	         return size;
+	     }
 }

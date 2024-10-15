@@ -12,7 +12,7 @@ public class Counter {
         StringBuilder rleOutput = new StringBuilder();
 
         result.append("\n\n-----------------------------------------------------------\n");
-        result.append(":: Lib Uncle Presser - Nucleotidio Presser Algorithm ::\n");
+        result.append("  :: Lib Uncle Presser - Nucleotidio Presser Algorithm ::\n");
         result.append("-----------------------------------------------------------\n");
 
         // Mapa para armazenar as frequências consolidadas
@@ -29,13 +29,13 @@ public class Counter {
         }
 
         // Exibe as frequências consolidadas
-        result.append("Frequências Totais:\n");
+        result.append(" Frequências Totais:\n");
         for (Map.Entry<Character, Integer> entry : totalFrequencies.entrySet()) {
             result.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
         }
-
-        result.append("Tamanho Total das Sequências :: ").append(totalLength).append("\n");
-        result.append("-----------------------------------------------------------\n");
+        result.append("                                                           \n");
+        result.append(" Tamanho Total das Sequências :: ").append(totalLength).append("\n");
+        result.append("                                                           ");
 
         // Imprime o relatório no console
         System.out.println(result.toString());
