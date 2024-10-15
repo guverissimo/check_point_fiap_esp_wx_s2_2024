@@ -9,6 +9,7 @@ public class Counter {
     // Processa uma lista de strings e retorna um relatório consolidado
     public String countAll(List<String> inputs) {
         StringBuilder result = new StringBuilder();
+        StringBuilder rleOutput = new StringBuilder();
 
         result.append("\n\n-----------------------------------------------------------\n");
         result.append(":: Lib Uncle Presser - Nucleotidio Presser Algorithm ::\n");
@@ -23,6 +24,7 @@ public class Counter {
             if (!input.isEmpty()) {
                 totalLength += input.length();  // Soma o tamanho total
                 accumulateFrequencies(totalFrequencies, input);  // Acumula frequências
+                rleOutput.append(count(input)).append("\n");  // Gera a saída RLE
             }
         }
 
@@ -35,7 +37,11 @@ public class Counter {
         result.append("Tamanho Total das Sequências :: ").append(totalLength).append("\n");
         result.append("-----------------------------------------------------------\n");
 
-        return result.toString();
+        // Imprime o relatório no console
+        System.out.println(result.toString());
+
+        // Retorna a saída RLE das sequências
+        return rleOutput.toString();
     }
 
     // Gera a compressão RLE para uma sequência
