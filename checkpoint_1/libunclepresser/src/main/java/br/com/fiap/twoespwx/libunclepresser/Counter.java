@@ -21,10 +21,12 @@ public class Counter {
 
         // Processa cada sequência e acumula frequências e tamanho
         for (String input : inputs) {
-            if (!input.isEmpty()) {
-                totalLength += input.length();  // Soma o tamanho total
-                accumulateFrequencies(totalFrequencies, input);  // Acumula frequências
-                rleOutput.append(count(input)).append("\n");  // Gera a saída RLE
+            String filteredInput = filterValidCharacters(input);  // Filtra apenas A, T, C, G
+
+            if (!filteredInput.isEmpty()) {
+                totalLength += filteredInput.length();  // Soma o tamanho total
+                accumulateFrequencies(totalFrequencies, filteredInput);  // Acumula frequências
+                rleOutput.append(count(filteredInput)).append("\n");  // Gera a saída RLE
             }
         }
 
@@ -42,6 +44,17 @@ public class Counter {
 
         // Retorna a saída RLE das sequências
         return rleOutput.toString();
+    }
+
+    // Filtra apenas caracteres A, T, C, G
+    private String filterValidCharacters(String input) {
+        StringBuilder validChars = new StringBuilder();
+        for (char c : input.toCharArray()) {
+            if (c == 'A' || c == 'T' || c == 'C' || c == 'G') {
+                validChars.append(c);
+            }
+        }
+        return validChars.toString();
     }
 
     // Gera a compressão RLE para uma sequência
