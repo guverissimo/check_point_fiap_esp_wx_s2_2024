@@ -6,6 +6,7 @@
  *      - Gabriel Pacheco     		-   rm550191@fiap.com.br
  *      - Murilo Henrique Obinata	-   rm99855@fiap.com.br
  *      - Leonardo Correia   		-   rm550413@fiap.com.br
+ *      
  */
 
 package br.com.fiap.twoespwx.libunclepresser;
@@ -22,10 +23,11 @@ public class App
         System.out.println("LIB UNCLE PRESSER - GRUPO G2ML");
         
         if (args.length > 0) {
-        	System.out.println("Dados carregados...");	
+        	System.out.println("Dados carregados...");     	
         }
         
-        String inputFilename = "inputs/input1.txt";
+//        String inputFilename = "inputs/input1.txt";
+        String inputFilename = args[0];
         String outputFilename = "outputs/OUTPUT1.txt";
         
         System.out.println(""
@@ -33,6 +35,7 @@ public class App
         		+ "|                                                           |\r\n"
         		+ "| INPUT  FILENAME: INPUT1.TXT                               |\r\n"
         		+ "| OUTPUT FILENAME: OUTPUT1.TXT                              |\r\n"
+        		+ "|                                                           |\r\n"
         		+ "|-----------------------------------------------------------|\r\n");
              
         Reader reader = new Reader();
@@ -59,6 +62,7 @@ public class App
             System.out.println("| ALGORITHM: Run-Length Encoding (RLE)                      |");
             System.out.println("| TEXT-CODIFICATION: UTF-8                                  |");
             System.out.printf ("| COMPRESSION  RATE:=~ %-37s|\n", calc + "%");
+        	System.out.println("|                                                           |");
             System.out.println("|-----------------------------------------------------------|");
 
     }
