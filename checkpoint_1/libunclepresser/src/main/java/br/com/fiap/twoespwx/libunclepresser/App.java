@@ -19,7 +19,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println("LIB UNCLE PRESSER - GRUPO G2ML%-40s");
+        System.out.println("LIB UNCLE PRESSER - GRUPO G2ML");
+        
+        if (args.length > 0) {
+        	System.out.println("Dados carregados...");	
+        }
         
         String inputFilename = "inputs/input1.txt";
         String outputFilename = "outputs/OUTPUT1.txt";
