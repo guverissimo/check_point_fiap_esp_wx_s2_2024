@@ -21,11 +21,10 @@ public class App
 {
     public static void main( String[] args )
     {
-//    	System.out.println(args[0]);
         System.out.println("LIB UNCLE PRESSER - GRUPO G2ML");
         
-        String inputFilename;
-        String outputFilename;
+//        String inputFilename;
+//        String outputFilename;
 //        if (args.length >= 0 ) {
 //        	System.out.println("Dados carregados..."); 
 //        	inputFilename = args[0];
@@ -35,9 +34,18 @@ public class App
 //        	inputFilename = "inputs/input1.txt";
 //        	outputFilename = "outputs/OUTPUT1.txt";
 //        }
+//        
+//      inputFilename = "inputs/input1.txt";
+//      outputFilename = "outputs/OUTPUT1.txt";
         
-      inputFilename = "inputs/input1.txt";
-      outputFilename = "outputs/OUTPUT1.txt";
+        if (args.length < 2) {
+            System.err.println("Erro: É necessário fornecer os caminhos do arquivo de entrada e saída.");
+            System.err.println("Uso: java -jar <path/to/jar> <path/to/input> <path/to/output>");
+            System.exit(1); 
+        }
+
+        String inputFilename = args[0];
+        String outputFilename = args[1];
         
         System.out.println(""
         		+ "|-----------------------------------------------------------|\r\n"
