@@ -12,6 +12,7 @@
 package br.com.fiap.twoespwx.libunclepresser;
 
 import java.util.List;
+import java.util.Scanner;
 
 import br.com.fiap.twoespwx.libunclepresser.input.Reader;
 import br.com.fiap.twoespwx.libunclepresser.output.OutputWriter;
@@ -20,15 +21,23 @@ public class App
 {
     public static void main( String[] args )
     {
+//    	System.out.println(args[0]);
         System.out.println("LIB UNCLE PRESSER - GRUPO G2ML");
         
-        if (args.length > 0) {
-        	System.out.println("Dados carregados...");     	
-        }
+        String inputFilename;
+        String outputFilename;
+//        if (args.length >= 0 ) {
+//        	System.out.println("Dados carregados..."); 
+//        	inputFilename = args[0];
+//        	outputFilename = args[1];
+//        } else {	
+//        	System.out.println("Arquivos nao encontrados");     
+//        	inputFilename = "inputs/input1.txt";
+//        	outputFilename = "outputs/OUTPUT1.txt";
+//        }
         
-//        String inputFilename = "inputs/input1.txt";
-        String inputFilename = args[0];
-        String outputFilename = "outputs/OUTPUT1.txt";
+      inputFilename = "inputs/input1.txt";
+      outputFilename = "outputs/OUTPUT1.txt";
         
         System.out.println(""
         		+ "|-----------------------------------------------------------|\r\n"
